@@ -429,6 +429,36 @@
             border-radius: 20px;
         }
 
+        /* Project Link Button */
+        .project-link {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--accent), var(--success));
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(91, 79, 255, 0.3);
+        }
+
+        .project-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(91, 79, 255, 0.4);
+        }
+
+        .project-link-icon {
+            display: inline-block;
+            margin-left: 8px;
+            transition: transform 0.3s;
+        }
+
+        .project-link:hover .project-link-icon {
+            transform: translateX(3px);
+        }
+
         /* Interactive Skills Network */
         .skills {
             padding: 100px 40px;
@@ -1033,7 +1063,7 @@
             <h2 class="projects-title">Featured Projects</h2>
             
             <div class="project-carousel" id="projectCarousel">
-                <div class="project-slide active" data-index="0">
+                <div class="project-slide active" data-index="0" data-url="https://github.com/JonSnow1807/FastMQA">
                     <div class="project-visual">
                         <div class="project-animation">
                             <canvas id="cudaCanvas" width="800" height="250"></canvas>
@@ -1053,10 +1083,13 @@
                                 <span>🔧</span> CUDA/C++
                             </div>
                         </div>
+                        <a href="https://github.com/JonSnow1807/FastMQA" target="_blank" class="project-link">
+                            View on GitHub <span class="project-link-icon">→</span>
+                        </a>
                     </div>
                 </div>
 
-                <div class="project-slide next" data-index="1">
+                <div class="project-slide next" data-index="1" data-url="https://pypi.org/project/pytorch-autotune/">
                     <div class="project-visual" style="background: linear-gradient(135deg, #667eea, #764ba2);">
                         <div class="project-animation">
                             <div id="pytorchDemo"></div>
@@ -1076,10 +1109,13 @@
                                 <span>🐍</span> Python
                             </div>
                         </div>
+                        <a href="https://pypi.org/project/pytorch-autotune/" target="_blank" class="project-link">
+                            View on PyPI <span class="project-link-icon">→</span>
+                        </a>
                     </div>
                 </div>
 
-                <div class="project-slide hidden" data-index="2">
+                <div class="project-slide hidden" data-index="2" data-url="https://github.com/JonSnow1807/3D-Point-Cloud-Viewer">
                     <div class="project-visual" style="background: #1a1a1a;">
                         <div class="project-animation">
                             <canvas id="pointCloudCanvas" width="800" height="250"></canvas>
@@ -1099,6 +1135,9 @@
                                 <span>🎮</span> OpenGL
                             </div>
                         </div>
+                        <a href="https://github.com/JonSnow1807/3D-Point-Cloud-Viewer" target="_blank" class="project-link">
+                            View on GitHub <span class="project-link-icon">→</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1364,9 +1403,10 @@
             statsCube.style.transform = `rotateX(${cubeRotateX}deg) rotateY(${cubeRotateY}deg)`;
         });
 
-        // Project Carousel
+        // Project Carousel with Click Navigation
         const slides = document.querySelectorAll('.project-slide');
         let currentSlide = 0;
+        let isClickAllowed = true;
 
         function updateCarousel() {
             slides.forEach((slide, index) => {
@@ -1385,13 +1425,24 @@
         }
 
         slides.forEach((slide, index) => {
-            slide.addEventListener('click', () => {
-                if (slide.classList.contains('prev')) {
+            slide.addEventListener('click', (e) => {
+                // Check if click is on the project link button
+                if (e.target.classList.contains('project-link') || e.target.closest('.project-link')) {
+                    // Link button was clicked, let it navigate
+                    return;
+                }
+                
+                // Otherwise handle carousel navigation
+                if (slide.classList.contains('active')) {
+                    // If active slide is clicked, prevent navigation to allow link clicking
+                    return;
+                } else if (slide.classList.contains('prev')) {
                     currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                    updateCarousel();
                 } else if (slide.classList.contains('next')) {
                     currentSlide = (currentSlide + 1) % slides.length;
+                    updateCarousel();
                 }
-                updateCarousel();
             });
         });
 
