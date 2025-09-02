@@ -459,6 +459,37 @@
             transform: translateX(3px);
         }
 
+        /* View All Projects Button */
+        .view-all-btn {
+            display: inline-block;
+            padding: 18px 50px;
+            background: linear-gradient(135deg, var(--accent), var(--success));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(91, 79, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .view-all-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(91, 79, 255, 0.4);
+        }
+
+        .view-all-btn span {
+            display: inline-block;
+            margin-left: 10px;
+            transition: transform 0.3s;
+        }
+
+        .view-all-btn:hover span {
+            transform: translateX(5px);
+        }
+
         /* Interactive Skills Network */
         .skills {
             padding: 100px 40px;
@@ -1140,6 +1171,14 @@
                         </a>
                     </div>
                 </div>
+            </div>
+            
+            <!-- View All Projects Button -->
+            <div style="text-align: center; margin-top: 60px;">
+                <a href="projects.html" class="view-all-btn">
+                    View All Projects
+                    <span>→</span>
+                </a>
             </div>
         </div>
     </section>
