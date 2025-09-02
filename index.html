@@ -933,9 +933,78 @@
                 left: 20px !important;
             }
 
+            /* Fixed Project Carousel Mobile Issues */
+            .projects {
+                padding: 60px 20px;
+                overflow: hidden;
+            }
+
+            .projects-title {
+                font-size: 2rem;
+                line-height: 1.2;
+                margin-bottom: 40px;
+                word-wrap: break-word;
+            }
+
+            .project-carousel {
+                height: auto;
+                margin: 0 -20px;
+                padding: 20px;
+            }
+
+            .project-slide {
+                position: relative;
+                width: calc(100% - 40px);
+                max-width: none;
+                margin: 0 auto;
+                transform: none !important;
+                opacity: 1 !important;
+                display: none;
+                padding: 25px;
+            }
+
+            .project-slide.active {
+                display: block;
+                transform: scale(1) !important;
+            }
+
             .project-slide.prev,
-            .project-slide.next {
-                transform: scale(0.8) translateY(100px);
+            .project-slide.next,
+            .project-slide.hidden {
+                display: none;
+            }
+
+            .project-visual {
+                height: 180px;
+            }
+
+            .project-info h3 {
+                font-size: 1.5rem;
+            }
+
+            .project-info p {
+                font-size: 0.9rem;
+            }
+
+            .project-metrics {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            .project-metric {
+                padding: 8px 15px;
+                font-size: 0.85rem;
+                flex: 0 1 auto;
+            }
+
+            .project-tags {
+                flex-wrap: wrap;
+            }
+
+            .view-all-btn {
+                padding: 15px 40px;
+                font-size: 1rem;
+                margin-top: 30px;
             }
 
             .cursor,
