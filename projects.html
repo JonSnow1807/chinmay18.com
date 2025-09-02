@@ -1056,12 +1056,12 @@
             };
             
             // Create initial drops immediately with no delay
-            for (let i = 0; i < 8; i++) {
+            for (let i = 0; i < 9; i++) {
                 createDrop();
             }
             
             // Continue creating drops more frequently
-            codeRainInterval = setInterval(createDrop, 200);
+            codeRainInterval = setInterval(createDrop, 100);
         }
         
         function stopCodeRain() {
