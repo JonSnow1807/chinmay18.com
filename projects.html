@@ -4,14 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Projects · Chinmay Shrivastava</title>
-  <meta name="description" content="Projects by Chinmay Shrivastava: distributed video sync, fused CUDA operators, a PyTorch autotuner, a Multi-Query Attention kernel, OCR on Hugging Face, and shipped tools. Each card carries one verified number and its source.">
+  <meta name="description" content="Projects by Chinmay Shrivastava: distributed video sync, fused CUDA operators, a PyTorch autotuner, a Multi-Query Attention kernel, OCR on Hugging Face, and shipped tools. Every number on each card names its source.">
   <link rel="canonical" href="https://chinmay18.com/projects.html">
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0d1117" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Projects · Chinmay Shrivastava">
-  <meta property="og:description" content="Ten projects, each with one verified number and the file it came from.">
+  <meta property="og:description" content="Ten projects, each with sourced numbers and the limits of what it does.">
   <meta property="og:url" content="https://chinmay18.com/projects.html">
+  <meta property="og:image" content="https://chinmay18.com/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://chinmay18.com/assets/og.png">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23192438'/%3E%3Ccircle cx='24' cy='40' r='9' fill='%23bba8ff'/%3E%3Ccircle cx='42' cy='26' r='9' fill='%2383dcd0'/%3E%3C/svg%3E">
   <script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark"){document.documentElement.setAttribute("data-theme",t)}}catch(e){}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,20 +29,20 @@
 
   <header class="topbar">
     <div class="wrap">
-      <a class="brand" href="index.html" aria-label="Chinmay Shrivastava, home"><span class="dot" aria-hidden="true"></span>chinmay18.com</a>
-      <ul class="nav">
+      <a class="brand" href="index.html" aria-label="chinmay18.com, home"><span class="dot" aria-hidden="true"></span>chinmay18.com</a>
+      <nav aria-label="Primary"><ul class="nav">
         <li><a href="index.html#evidence" data-cmd="Evidence ledger" data-kind="section">Evidence</a></li>
         <li><a href="index.html#work" data-cmd="Selected work" data-kind="section">Work</a></li>
         <li><a href="index.html#upstream" data-cmd="Upstream record" data-kind="section">Upstream</a></li>
         <li><a href="index.html#experience" data-cmd="Experience" data-kind="section">Experience</a></li>
         <li><a href="projects.html" aria-current="page" data-cmd="All projects" data-kind="page">Projects</a></li>
         <li><a href="index.html#contact" data-cmd="Contact" data-kind="section">Contact</a></li>
-      </ul>
+      </ul></nav>
       <div class="controls">
-        <button class="btn-kbd" type="button" data-open-palette aria-label="Open command palette"><span class="label">Search</span><kbd>⌘K</kbd></button>
-        <button class="btn-icon" type="button" id="theme-toggle" aria-label="Theme: system. Click to change." data-theme="system">
+        <button class="btn-kbd" type="button" data-open-palette aria-label="Search this site (Command K)"><span class="label">Search</span><kbd aria-hidden="true">⌘K</kbd></button>
+        <button class="btn-icon" type="button" id="theme-toggle">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5.3 5.3l1.7 1.7M17 17l1.7 1.7M5.3 18.7 7 17M17 7l1.7-1.7"/></svg>
-          <span class="theme-label mono" style="font-size:12px">system</span>
+          <span class="sr-only">Theme: </span><span class="theme-label mono" aria-live="polite">system</span>
         </button>
       </div>
     </div>
@@ -46,14 +51,15 @@
   <main id="main">
     <section class="page-head">
       <div class="wrap">
-        <p class="eyebrow rise" style="--i:0">Projects · one verified number per card</p>
-        <h1 class="rise" style="--i:1">Everything I have shipped,<br>with the receipts</h1>
-        <p class="rise" style="--i:2">Ten projects, from a production watch-party service to one-day prototypes. Each card carries a single number I can trace to a committed file or a live page, and says what the project does not do. Four older repositories were left off because their headline claims could not be traced to anything committed.</p>
+        <p class="eyebrow rise" style="--i:0">Projects · every number with its source</p>
+        <h1 class="rise" style="--i:1">Ten projects,<br>each with its sources</h1>
+        <p class="rise" style="--i:2">From a production watch-party service to one-day prototypes. Each card's numbers trace to a committed file or a live page, and each card says what the project does not do.</p>
       </div>
     </section>
 
     <section class="section" style="border-top:0; padding-top:0">
       <div class="wrap">
+        <h2 class="sr-only">All projects</h2>
         <div class="filters" role="group" aria-label="Filter projects">
           <button class="filter" type="button" data-filter="all" aria-pressed="true">All</button>
           <button class="filter" type="button" data-filter="systems" aria-pressed="false">Systems &amp; infrastructure</button>
@@ -61,12 +67,13 @@
           <button class="filter" type="button" data-filter="ml" aria-pressed="false">Applied ML</button>
           <button class="filter" type="button" data-filter="product" aria-pressed="false">Shipped tools</button>
         </div>
+        <p class="sr-only" role="status" id="filter-status"></p>
 
         <div class="grid">
           <!-- Mustard -->
           <article class="proj" data-kinds="systems product">
             <div class="top"><h3><a href="https://github.com/JonSnow1807/Mustard-Watch-Party" target="_blank" rel="noopener" data-cmd="Mustard Watch Party" data-kind="project">Mustard Watch Party</a></h3><span class="kind">systems · live</span></div>
-            <p>Multi-instance video synchronization for watch parties: NTP-style clock estimation over the socket acknowledgement, predictive drift control, room state in Redis behind atomic Lua scripts, and a control protocol model-checked in TLA+. Go and Rust relays exist as conformance studies.</p>
+            <p>Video synchronization for watch parties: NTP-style clock estimation over the socket acknowledgment, predictive drift control, room state in Redis behind atomic Lua scripts, and a control protocol model-checked in TLA+. Multi-instance-capable (exercised in a three-instance lab and nightly CI; production runs one backend instance). Go and Rust relays exist as conformance studies.</p>
             <div class="fact">48 ms P95 steady-state drift · 3 Chrome clients · ~300 ms simulated RTT · 240 s<small>player-reported, single committed run · docs/measurements/servo/S2-overhauled-servo-mse76wbj</small></div>
             <div class="tags"><span>TypeScript</span><span>NestJS</span><span>React</span><span>Socket.IO</span><span>Redis</span><span>PostgreSQL</span><span>TLA+</span><span>Go</span><span>Rust</span></div>
             <div class="foot"><a href="https://mustard.watch" target="_blank" rel="noopener">Live</a><a href="https://github.com/JonSnow1807/Mustard-Watch-Party" target="_blank" rel="noopener">Source</a><a href="https://github.com/JonSnow1807/Mustard-Watch-Party/tree/main/docs/measurements" target="_blank" rel="noopener">Measurements</a></div>
@@ -76,25 +83,25 @@
           <article class="proj" data-kinds="gpu">
             <div class="top"><h3><a href="https://github.com/JonSnow1807/Fused-LayerNorm-CUDA-Operator" target="_blank" rel="noopener" data-cmd="Fused LayerNorm CUDA operators" data-kind="project">Fused LayerNorm / RMSNorm CUDA operators</a></h3><span class="kind">gpu</span></div>
             <p>Fused residual-add + normalization kernels for PyTorch with FP8 outputs and a deterministic backward, registered as custom ops so torch.compile keeps the graph whole. A100 and H100 results are committed, including the configurations where PyTorch wins.</p>
-            <div class="fact">1.04–1.76× vs the torch.compile composite · RMSNorm→FP8 · A100 · fp16 · kernel time<small>4.9–7.2× vs eager; H100 shows 0.70–1.20× and makes no claim · benchmarks/results/2026-08-25_a100-40gb_v050_ops</small></div>
+            <div class="fact">1.04–1.76× vs the torch.compile composite · RMSNorm→FP8 · A100 · FP16 · kernel time<small>4.9–7.2× vs eager; H100 shows 0.70–1.20× and makes no claim · benchmarks/results/2026-08-25_a100-40gb_v050_ops</small></div>
             <div class="tags"><span>CUDA</span><span>C++</span><span>PyTorch</span><span>torch.compile</span><span>FP8</span><span>pytest</span></div>
-            <div class="foot"><a href="https://github.com/JonSnow1807/Fused-LayerNorm-CUDA-Operator" target="_blank" rel="noopener">Source</a><a href="https://github.com/JonSnow1807/Fused-LayerNorm-CUDA-Operator/blob/main/docs/methodology.md" target="_blank" rel="noopener">Methodology</a></div>
+            <div class="foot"><a href="https://github.com/JonSnow1807/Fused-LayerNorm-CUDA-Operator" target="_blank" rel="noopener">Source</a><a href="https://github.com/JonSnow1807/Fused-LayerNorm-CUDA-Operator/tree/main/benchmarks/results/2026-08-25_a100-40gb_v050_ops" target="_blank" rel="noopener">A100 results</a><a href="https://github.com/JonSnow1807/Fused-LayerNorm-CUDA-Operator/blob/main/docs/methodology.md" target="_blank" rel="noopener">Methodology</a></div>
           </article>
 
           <!-- AutoTune -->
           <article class="proj" data-kinds="gpu product">
             <div class="top"><h3><a href="https://github.com/JonSnow1807/pytorch-autotune" target="_blank" rel="noopener" data-cmd="PyTorch AutoTune" data-kind="project">PyTorch AutoTune</a></h3><span class="kind">gpu · pypi</span></div>
-            <p>A training autotuner that times precision, compile mode, memory format and fused-optimizer configurations on your model and batch, keeps the fastest, and never returns one slower than your baseline. Version 2.0 on PyPI; the 1.0 marketing numbers were retracted in the changelog.</p>
-            <div class="fact">2.7–6.7× training-step speedup vs PyTorch-default fp32 eager · A100<small>ResNet-50 2.71×, ResNet-18 3.84×, 6-layer Transformer 6.65× (2.55× vs TF32 eager) · benchmarks/results/2026-08-25_a100-40gb_v200</small></div>
+            <p>A training autotuner that times precision, compile mode, memory format and fused-optimizer configurations on the target model and batch, keeps the fastest, and never returns one slower than the baseline. Version 2.0 on PyPI; the 1.0 marketing numbers were retracted in the changelog.</p>
+            <div class="fact">2.7–6.7× training-step speedup vs PyTorch-default FP32 eager · A100<small>ResNet-50 2.71×, ResNet-18 3.84×, 6-layer Transformer 6.65× (2.55× vs TF32 eager) · benchmarks/results/2026-08-25_a100-40gb_v200</small></div>
             <div class="tags"><span>Python</span><span>PyTorch</span><span>CUDA graphs</span><span>AMP</span><span>PyPI</span></div>
-            <div class="foot"><a href="https://pypi.org/project/pytorch-autotune/" target="_blank" rel="noopener">PyPI</a><a href="https://github.com/JonSnow1807/pytorch-autotune" target="_blank" rel="noopener">Source</a></div>
+            <div class="foot"><a href="https://pypi.org/project/pytorch-autotune/" target="_blank" rel="noopener">PyPI</a><a href="https://github.com/JonSnow1807/pytorch-autotune" target="_blank" rel="noopener">Source</a><a href="https://github.com/JonSnow1807/pytorch-autotune/tree/main/benchmarks/results/2026-08-25_a100-40gb_v200" target="_blank" rel="noopener">Benchmark artifacts</a></div>
           </article>
 
           <!-- FastMQA -->
           <article class="proj" data-kinds="gpu">
             <div class="top"><h3><a href="https://github.com/JonSnow1807/FastMQA" target="_blank" rel="noopener" data-cmd="FastMQA attention kernel" data-kind="project">FastMQA</a></h3><span class="kind">gpu · negative result</span></div>
-            <p>A FlashAttention-style Multi-Query Attention CUDA kernel for PyTorch: shared-memory tiling, online softmax, fp32 forward, checked against a float64 reference. It beats my earlier kernel by 17–20× and still loses to PyTorch's tensor-core SDPA, which the README says plainly.</p>
-            <div class="fact">0.25–0.40× the speed of F.scaled_dot_product_attention fp32 · A100 · max error vs float64 ≤ 8.9e-7<small>honest negative result; 17–20× over the repo's previous kernel · benchmarks/results/bench_2026-08-20_210834_a100-sxm4-40gb.json</small></div>
+            <p>A FlashAttention-style Multi-Query Attention CUDA kernel for PyTorch: shared-memory tiling, online softmax, FP32 forward, checked against a float64 reference. It beats my earlier kernel by 17–20× and still loses to PyTorch's tensor-core SDPA.</p>
+            <div class="fact">0.25–0.40× the speed of F.scaled_dot_product_attention FP32 · A100 · max error vs float64 ≤ 8.9e-7<small>benchmarks/results/bench_2026-08-20_210834_a100-sxm4-40gb.json</small></div>
             <div class="tags"><span>CUDA</span><span>C++</span><span>PyTorch</span><span>pytest</span></div>
             <div class="foot"><a href="https://github.com/JonSnow1807/FastMQA" target="_blank" rel="noopener">Source</a><a href="https://github.com/JonSnow1807/FastMQA/tree/main/benchmarks/results" target="_blank" rel="noopener">Results</a></div>
           </article>
@@ -103,7 +110,7 @@
           <article class="proj" data-kinds="ml product">
             <div class="top"><h3><a href="https://github.com/JonSnow1807/Medical-Prescription-OCR" target="_blank" rel="noopener" data-cmd="Medical prescription OCR" data-kind="project">Medical Prescription OCR</a></h3><span class="kind">ml · hugging face</span></div>
             <p>A Donut vision-encoder-decoder fine-tuned to transcribe synthetic handwriting-style prescriptions, published on Hugging Face as a model and a 1,000-image dataset, with a Gradio demo that gates OCR behind zero-shot prescription classification. Not evaluated on real handwriting.</p>
-            <div class="fact">6,982 all-time model downloads · 652 in the last 30 days · dataset 8,060 · 24 GitHub stars<small>huggingface.co/chinmays18 · fetched 2026-10-07 · no accuracy figure is quoted because none is committed</small></div>
+            <div class="fact">6,982 all-time model downloads · 652 in the last 30 days · 8,060 all-time dataset downloads · 24 GitHub stars<small>huggingface.co/chinmays18 · fetched 2026-10-07 · no accuracy figure is quoted because none is committed</small></div>
             <div class="tags"><span>PyTorch</span><span>Transformers</span><span>Donut</span><span>Lightning</span><span>Gradio</span></div>
             <div class="foot"><a href="https://huggingface.co/chinmays18/medical-prescription-ocr" target="_blank" rel="noopener">Model</a><a href="https://huggingface.co/datasets/chinmays18/medical-prescription-dataset" target="_blank" rel="noopener">Dataset</a><a href="https://github.com/JonSnow1807/Medical-Prescription-OCR" target="_blank" rel="noopener">Source</a></div>
           </article>
@@ -111,8 +118,8 @@
           <!-- API Orchestrator -->
           <article class="proj" data-kinds="product systems">
             <div class="top"><h3><a href="https://github.com/JonSnow1807/api-orchestrator" target="_blank" rel="noopener" data-cmd="API Orchestrator" data-kind="project">API Orchestrator</a></h3><span class="kind">product · live</span></div>
-            <p>A self-hosted API development platform: collections and environments, mock servers, rule-based OpenAPI governance, natural-language test generation and a drag-and-drop workflow builder, with a live demo and a published VS Code extension. The AI-assisted analysis is optional and says so.</p>
-            <div class="fact">307 REST endpoints on a fresh install · 97 unit tests · 447 VS Code Marketplace installs<small>README "honest numbers" table, 2026-08-25 · marketplace gallery API, fetched 2026-10-07</small></div>
+            <p>A self-hosted API development platform: collections and environments, mock servers, rule-based OpenAPI governance, natural-language test generation and a drag-and-drop workflow builder, with a live demo and a published VS Code extension. The AI-assisted analysis is optional.</p>
+            <div class="fact">307 REST endpoints on a fresh local install · 97 unit tests · 447 VS Code Marketplace installs<small>README measured-numbers table, 2026-08-25 (the live demo's openapi.json exposes 265 path/method pairs) · Marketplace gallery API, fetched 2026-10-07</small></div>
             <div class="tags"><span>FastAPI</span><span>React</span><span>SQLAlchemy</span><span>WebSockets</span><span>Docker</span><span>TypeScript</span></div>
             <div class="foot"><a href="https://streamapi.dev" target="_blank" rel="noopener">Live demo</a><a href="https://github.com/JonSnow1807/api-orchestrator" target="_blank" rel="noopener">Source</a><a href="https://marketplace.visualstudio.com/items?itemName=ChinmayShrivastava.api-orchestrator" target="_blank" rel="noopener">VS Code</a></div>
           </article>
@@ -120,8 +127,8 @@
           <!-- ChatGPT Spark -->
           <article class="proj" data-kinds="product">
             <div class="top"><h3><a href="https://github.com/JonSnow1807/chatgpt-memory-manager" target="_blank" rel="noopener" data-cmd="ChatGPT Spark extension" data-kind="project">ChatGPT Spark</a></h3><span class="kind">product · chrome web store</span></div>
-            <p>A published Chrome extension that adds real-time prompt coaching and searchable conversation memory to ChatGPT, backed by a FastAPI service with Supabase storage and OpenAI embeddings, plus a React dashboard. Built in one week in mid-2025 and still live.</p>
-            <div class="fact">4.9 / 5 from 12 ratings · 23 users · listing live<small>Chrome Web Store, fetched 2026-10-07 · small sample; shown with the count on purpose</small></div>
+            <p>A published Chrome extension that adds real-time prompt coaching and searchable conversation memory to ChatGPT, backed by a FastAPI service with Supabase storage and OpenAI embeddings, plus a React dashboard. Built over one week in July 2025 and still live.</p>
+            <div class="fact">4.9 / 5 from 12 ratings · 23 users · listing live<small>Chrome Web Store, fetched 2026-10-07 · small sample</small></div>
             <div class="tags"><span>Chrome MV3</span><span>FastAPI</span><span>Supabase</span><span>OpenAI API</span><span>React</span><span>TypeScript</span></div>
             <div class="foot"><a href="https://chromewebstore.google.com/detail/chatgpt-spark/bieoffmnblcajoahiljjbhffeccojpop" target="_blank" rel="noopener">Web Store</a><a href="https://github.com/JonSnow1807/chatgpt-memory-manager" target="_blank" rel="noopener">Source</a></div>
           </article>
@@ -130,7 +137,7 @@
           <article class="proj quiet" data-kinds="systems">
             <div class="top"><h3><a href="https://github.com/JonSnow1807/3D-Point-Cloud-Viewer" target="_blank" rel="noopener" data-cmd="3D point cloud viewer" data-kind="project">3D Point Cloud Viewer</a></h3><span class="kind">systems · one-day build</span></div>
             <p>A C++17 / OpenGL 3.3 viewer with an octree for frustum culling and distance-based level of detail, an XYZ-RGB loader, voxel downsampling and a free camera. Renders generated files of up to 2 million points. The frame-rate figures it used to advertise measured CPU submission time only, so none are repeated here.</p>
-            <div class="fact">Octree frustum culling + LOD · files up to 2M points · builds with CMake today<small>no frame-rate claim; the old 858 FPS figure came from a 100K-point run</small></div>
+            <div class="fact">Octree frustum culling + LOD · files up to 2 million points · CMake build verified 2026-10-07<small>no frame-rate claim; the old 858 FPS figure came from a 100,000-point run</small></div>
             <div class="tags"><span>C++17</span><span>OpenGL</span><span>GLSL</span><span>CMake</span></div>
             <div class="foot"><a href="https://github.com/JonSnow1807/3D-Point-Cloud-Viewer" target="_blank" rel="noopener">Source</a></div>
           </article>
@@ -138,40 +145,41 @@
           <!-- Student scheduler -->
           <article class="proj quiet" data-kinds="systems">
             <div class="top"><h3><a href="https://github.com/JonSnow1807/student-scheduler" target="_blank" rel="noopener" data-cmd="Student scheduler" data-kind="project">Student Scheduler</a></h3><span class="kind">systems · one-day build</span></div>
-            <p>A Flask API that builds a conflict-free timetable for 500 synthetic students with Google OR-Tools CP-SAT: sections, capacity, time conflicts, a 3–5 course load and prerequisites as hard constraints, with a preference-weighted objective under a 60-second solver limit.</p>
-            <div class="fact">500 synthetic students · 1,880 assignments · 0 conflicts by construction<small>single committed run, full_metrics.json · zero conflicts is a hard constraint, not a result</small></div>
+            <p>A Flask API that builds a conflict-free timetable for 500 synthetic students with Google OR-Tools CP-SAT: sections, capacity, time conflicts, a 3–5 course load and prerequisites as hard constraints, with a preference-weighted objective. The solver runs under a configured 60-second cap, so the schedule is feasible rather than proven optimal.</p>
+            <div class="fact">500 synthetic students · 1,880 assignments · 0 conflicts by construction<small>single committed run, full_metrics.json; not reproducible from the committed seed (capacities 30–60 in seed_data.py vs 150–250 in the results) · zero conflicts is a hard constraint, not a result</small></div>
             <div class="tags"><span>Python</span><span>OR-Tools</span><span>Flask</span><span>PostgreSQL</span><span>Docker</span></div>
-            <div class="foot"><a href="https://github.com/JonSnow1807/student-scheduler" target="_blank" rel="noopener">Source</a></div>
+            <div class="foot"><a href="https://github.com/JonSnow1807/student-scheduler" target="_blank" rel="noopener">Source</a><a href="https://github.com/JonSnow1807/student-scheduler/blob/main/full_metrics.json" target="_blank" rel="noopener">full_metrics.json</a></div>
           </article>
 
           <!-- telcospace -->
-          <article class="proj quiet" data-kinds="ml systems">
-            <div class="top"><h3><a href="https://github.com/JonSnow1807/telcospace" target="_blank" rel="noopener" data-cmd="telcospace router placement" data-kind="project">telcospace</a></h3><span class="kind">prototype</span></div>
-            <p>A full-stack prototype that detects walls in uploaded floor plans with OpenCV and runs a genetic algorithm over a physics-based RF path-loss model (free-space loss, ITU-R P.1238 indoor model, material attenuation, knife-edge diffraction) to propose WiFi router placements and render coverage heatmaps.</p>
-            <div class="fact">25 router models in the seeded catalogue · ~17k lines of Python, ~5k of TypeScript<small>prototype: no tests, CI or deployment, so no accuracy or coverage figure is quoted</small></div>
+          <article class="proj quiet" data-kinds="systems">
+            <div class="top"><h3><a href="https://github.com/JonSnow1807/telcospace" target="_blank" rel="noopener" data-cmd="telcospace router placement" data-kind="project">telcospace</a></h3><span class="kind">systems · prototype</span></div>
+            <p>A full-stack prototype that detects walls in uploaded floor plans with OpenCV and runs a genetic algorithm over a physics-based RF path-loss model (free-space loss, ITU-R P.1238 indoor model, material attenuation, knife-edge diffraction) to propose Wi-Fi router placements and render coverage heatmaps.</p>
+            <div class="fact">25 router models in the seeded catalog · 971-line genetic algorithm · 1,232-line RF propagation module<small>prototype: no tests, CI or deployment, so no accuracy or coverage figure is quoted; of ~17k Python lines, ~13.5k are alternative wall detectors the default mode never runs</small></div>
             <div class="tags"><span>FastAPI</span><span>Celery</span><span>OpenCV</span><span>PostGIS</span><span>React</span><span>Vite</span></div>
             <div class="foot"><a href="https://github.com/JonSnow1807/telcospace" target="_blank" rel="noopener">Source</a></div>
           </article>
         </div>
 
-        <p class="grid-note">Not listed: gradient-cache, multi-ai-browser-extension, llm-knowledge-assistant and marketing-attribution-optimizer. They remain public on GitHub, but their headline numbers did not survive a check against what is committed, so they are not presented here as work.</p>
+        <p class="grid-note">Not listed: gradient-cache, multi-ai-browser-extension, llm-knowledge-assistant and marketing-attribution-optimizer. They remain public on GitHub, but their headline claims did not survive a check against what is committed (one has never compiled), so they are not presented here as work.</p>
       </div>
     </section>
   </main>
 
   <footer>
     <div class="wrap">
-      <span>© <span data-year>2026</span> Chinmay Shrivastava · Numbers on this page link to the file or page they came from. Last checked 2026-10-07.</span>
+      <span>© <span data-year>2026</span> Chinmay Shrivastava · Measured numbers link to their source files. Last checked 2026-10-07.</span>
       <span><a href="https://github.com/JonSnow1807/chinmay18.com" target="_blank" rel="noopener">Site source</a> · <a href="index.html">Home</a></span>
     </div>
   </footer>
 
-  <div class="palette" id="palette" hidden role="dialog" aria-modal="true" aria-label="Search this site">
+  <dialog class="palette" id="palette" aria-label="Search this site">
     <div class="palette-box">
-      <input id="palette-input" type="search" placeholder="Jump to a project or section…" aria-label="Search" autocomplete="off">
-      <ul id="palette-list" role="listbox"></ul>
+      <input id="palette-input" type="search" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-controls="palette-list" placeholder="Jump to a project or section…" aria-label="Search" autocomplete="off">
+      <ul id="palette-list" role="listbox" aria-label="Results"></ul>
+      <p id="palette-empty" class="empty" role="status" hidden>No match. Try a project, a section or a link.</p>
     </div>
-  </div>
+  </dialog>
 
   <script src="assets/js/site.js" defer></script>
 </body>

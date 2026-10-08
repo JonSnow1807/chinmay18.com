@@ -98,6 +98,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 76px;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -127,7 +128,7 @@ picture {
 
 a {
   color: inherit;
-  text-decoration-color: var(--line);
+  text-decoration-color: var(--quiet);
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
   transition: text-decoration-color 0.2s var(--ease), color 0.2s var(--ease);
@@ -141,7 +142,18 @@ a:hover {
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
-  border-radius: 3px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 ::selection {
@@ -205,6 +217,7 @@ p {
   position: sticky;
   top: 0;
   z-index: 50;
+  background: var(--bg);
   background: color-mix(in srgb, var(--bg) 88%, transparent);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
@@ -308,8 +321,29 @@ p {
 }
 
 @media (max-width: 760px) {
+  .topbar .wrap {
+    flex-wrap: wrap;
+    padding-block: 6px;
+    row-gap: 0;
+  }
+
   .nav {
+    order: 3;
+    flex-basis: 100%;
+    overflow-x: auto;
+    gap: 0;
+    padding-bottom: 6px;
+    scrollbar-width: none;
+  }
+
+  .nav::-webkit-scrollbar {
     display: none;
+  }
+
+  .nav a {
+    white-space: nowrap;
+    padding: 6px 8px;
+    font-size: 13px;
   }
 
   .btn-kbd .label {
@@ -510,10 +544,6 @@ p {
   overflow-wrap: anywhere;
 }
 
-.status dd a {
-  text-decoration-color: var(--line);
-}
-
 .status .foot {
   margin-top: 16px;
   padding-top: 12px;
@@ -639,11 +669,11 @@ p {
   font-size: 12px;
   line-height: 1.55;
   color: var(--quiet);
+  overflow-wrap: anywhere;
 }
 
 .tile .src a {
   color: var(--quiet);
-  text-decoration-color: var(--line);
 }
 
 .tile .src a:hover {
@@ -841,7 +871,7 @@ table.record tbody tr:hover td {
   background: var(--panel);
 }
 
-table.record .proj {
+table.record .project {
   font-weight: 600;
   white-space: nowrap;
 }
@@ -942,7 +972,7 @@ table.record .date {
     white-space: normal;
   }
 
-  table.record td.proj {
+  table.record td.project {
     grid-area: proj;
   }
 
@@ -1063,7 +1093,7 @@ table.record .date {
 /* ---------- skills ---------- */
 .skills {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(196px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(196px, 100%), 1fr));
   gap: 16px;
 }
 
@@ -1103,7 +1133,7 @@ table.record .date {
 /* ---------- also published ---------- */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
   gap: 18px;
 }
 
@@ -1148,7 +1178,6 @@ table.record .date {
 
 .card .meta a {
   color: var(--ink);
-  text-decoration-color: var(--line);
 }
 
 .card .meta a:hover {
@@ -1188,7 +1217,7 @@ table.record .date {
 
 .contact-row {
   display: grid;
-  grid-template-columns: 110px 1fr auto;
+  grid-template-columns: 110px 1fr;
   gap: 14px;
   align-items: center;
   padding: 14px 16px;
@@ -1218,8 +1247,11 @@ table.record .date {
   overflow-wrap: anywhere;
 }
 
-.contact-row dd a {
-  text-decoration-color: var(--line);
+.contact-row dd {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
 }
 
 .copy {
@@ -1260,20 +1292,32 @@ footer a {
 }
 
 /* ---------- command palette ---------- */
-.palette[hidden] {
-  display: none;
-}
-
 .palette {
   position: fixed;
   inset: 0;
   z-index: 200;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  border: 0;
+  padding: 12vh var(--gutter) 24px;
   display: grid;
   place-items: start center;
-  padding: 12vh var(--gutter) 24px;
+  background: rgba(25, 36, 56, 0.35);
   background: color-mix(in srgb, var(--ink) 35%, transparent);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
+  color: var(--ink);
+}
+
+.palette:not([open]) {
+  display: none;
+}
+
+.palette::backdrop {
+  background: transparent;
 }
 
 .palette-box {
@@ -1295,6 +1339,11 @@ footer a {
   font-size: 17px;
   padding: 18px 20px;
   outline: none;
+}
+
+.palette input:focus-visible {
+  outline: none;
+  box-shadow: inset 0 -2px 0 var(--accent);
 }
 
 .palette ul {
@@ -1331,10 +1380,15 @@ footer a {
 }
 
 .palette .empty {
+  margin: 0;
   padding: 18px 20px;
   color: var(--quiet);
   font-family: var(--font-mono);
   font-size: 13px;
+}
+
+.palette .empty[hidden] {
+  display: none;
 }
 
 /* ---------- projects page ---------- */
@@ -1389,7 +1443,7 @@ footer a {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
   gap: 18px;
 }
 
@@ -1450,6 +1504,7 @@ footer a {
   font-family: var(--font-mono);
   font-size: 12.5px;
   color: var(--ink);
+  overflow-wrap: anywhere;
   padding: 10px 12px;
   border-left: 2px solid var(--accent);
   background: var(--panel);
