@@ -82,10 +82,10 @@
           <!-- Fused CUDA -->
           <article class="proj" data-kinds="gpu">
             <div class="top"><h3><a href="https://github.com/JonSnow1807/Fused-LayerNorm-CUDA-Operator" target="_blank" rel="noopener" data-cmd="Fused LayerNorm CUDA operators" data-kind="project">Fused LayerNorm / RMSNorm CUDA operators</a></h3><span class="kind">gpu</span></div>
-            <p>Fused residual-add + normalization kernels for PyTorch with FP8 outputs and a deterministic backward, registered as custom ops so torch.compile keeps the graph whole. A100 and H100 results are committed, including the configurations where PyTorch wins.</p>
-            <div class="fact">1.04–1.76× vs the torch.compile composite · RMSNorm→FP8 · A100 · FP16 · kernel time<small>4.9–7.2× vs eager; H100 shows 0.70–1.20× and makes no claim · benchmarks/results/2026-08-25_a100-40gb_v050_ops</small></div>
+            <p>Fused residual-add + normalization kernels for PyTorch with FP8 outputs and a deterministic backward, registered as custom ops so torch.compile keeps the graph whole. A100 and H100 results are committed, including the configurations where PyTorch wins; v0.6.0 adds a register-resident few-row kernel and a warp-per-row dynamic-FP8 path for Hopper.</p>
+            <div class="fact">1.04–1.76× vs the torch.compile composite · RMSNorm→FP8 · A100 · FP16 · kernel time<small>4.9–7.2× vs eager; H100 (v0.5.0) shows 0.70–1.20× and makes no claim; v0.6.0 few-row kernel 0.62–0.85× of v0.5.0 kernel time on an H100 NVL, per-op medians · benchmarks/results/2026-08-25_a100-40gb_v050_ops and 2026-10-29_h100-nvl_v060_fastpaths</small></div>
             <div class="tags"><span>CUDA</span><span>C++</span><span>PyTorch</span><span>torch.compile</span><span>FP8</span><span>pytest</span></div>
-            <div class="foot"><a href="https://github.com/JonSnow1807/Fused-LayerNorm-CUDA-Operator" target="_blank" rel="noopener">Source</a><a href="https://github.com/JonSnow1807/Fused-LayerNorm-CUDA-Operator/tree/main/benchmarks/results/2026-08-25_a100-40gb_v050_ops" target="_blank" rel="noopener">A100 results</a><a href="https://github.com/JonSnow1807/Fused-LayerNorm-CUDA-Operator/blob/main/docs/methodology.md" target="_blank" rel="noopener">Methodology</a></div>
+            <div class="foot"><a href="https://github.com/JonSnow1807/Fused-LayerNorm-CUDA-Operator" target="_blank" rel="noopener">Source</a><a href="https://github.com/JonSnow1807/Fused-LayerNorm-CUDA-Operator/tree/main/benchmarks/results/2026-08-25_a100-40gb_v050_ops" target="_blank" rel="noopener">A100 results</a><a href="https://github.com/JonSnow1807/Fused-LayerNorm-CUDA-Operator/tree/main/benchmarks/results/2026-10-29_h100-nvl_v060_fastpaths" target="_blank" rel="noopener">H100 v0.6.0 results</a><a href="https://github.com/JonSnow1807/Fused-LayerNorm-CUDA-Operator/blob/main/docs/methodology.md" target="_blank" rel="noopener">Methodology</a></div>
           </article>
 
           <!-- AutoTune -->
@@ -168,7 +168,7 @@
 
   <footer>
     <div class="wrap">
-      <span>© <span data-year>2026</span> Chinmay Shrivastava · Measured numbers link to their source files. Last checked 2026-10-07.</span>
+      <span>© <span data-year>2026</span> Chinmay Shrivastava · Measured numbers link to their source files. Last checked 2026-11-02.</span>
       <span><a href="https://github.com/JonSnow1807/chinmay18.com" target="_blank" rel="noopener">Site source</a> · <a href="index.html">Home</a></span>
     </div>
   </footer>
