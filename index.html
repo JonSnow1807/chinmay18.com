@@ -95,7 +95,7 @@
           <dl>
             <dt>since</dt><dd>Nov 2025 · Reliance Jio</dd>
             <dt>focus</dt><dd>4G/5G analytics backend · GPU inference on Kubernetes/OpenShift</dd>
-            <dt>upstream</dt><dd>8 merged (PyTorch ×2, bpfilter ×3, DuckDB, nanoarrow, OpenTelemetry C++) · 39 open across PyTorch, DuckDB, RocksDB, Apache Arrow, llama.cpp, vLLM, SGLang, Envoy and stripe/ai</dd>
+            <dt>upstream</dt><dd>8 merged: PyTorch ×2, bpfilter ×3, DuckDB, Apache Arrow nanoarrow, OpenTelemetry C++</dd>
             <dt>open to</dt><dd>ML infrastructure and backend roles · Bay Area (relocating)</dd>
             <dt>contact</dt><dd><a href="mailto:cshrivastava2000@gmail.com">cshrivastava2000@gmail.com</a></dd>
           </dl>
@@ -256,7 +256,7 @@
         <div class="section-head">
           <p class="eyebrow">Upstream record</p>
           <h2>Pull requests to projects I do not own</h2>
-          <p>Status as of 2026-11-02. Merged entries link to the landing commit; the open pull requests of one project share a row. Not listed: four other PyTorch proposals and five Metaflow proposals that were closed without landing, one Stripe fix superseded by the maintainers' own, and a torchtune documentation PR (<a href="https://github.com/meta-pytorch/torchtune/pull/2889" target="_blank" rel="noopener">#2889</a>) closed in October 2026 when that project was wound down.</p>
+          <p>Status as of 2026-11-02; merged changes only, each linked to its landing commit. Not listed: four other PyTorch proposals and five Metaflow proposals that were closed without landing, one Stripe fix superseded by the maintainers' own, and a torchtune documentation PR (<a href="https://github.com/meta-pytorch/torchtune/pull/2889" target="_blank" rel="noopener">#2889</a>) closed in October 2026 when that project was wound down.</p>
         </div>
         <div class="table-wrap reveal" role="region" aria-label="Upstream pull requests" tabindex="0">
           <table class="record">
@@ -327,97 +327,6 @@
                 <td class="ref"><a href="https://github.com/open-telemetry/opentelemetry-cpp/pull/4725" target="_blank" rel="noopener" data-cmd="OpenTelemetry C++ #4725 misaligned sockaddr_in" data-kind="pull request">#4725</a></td>
                 <td><span class="chip merged">merged</span></td>
                 <td class="date">Oct 2026</td>
-              </tr>
-              <tr>
-                <td class="project">vLLM</td>
-                <td>ERNIE 4.5 tool and reasoning parsers for the Rust frontend: a chunk-invariant state machine for the <code class="mono">&lt;response&gt;</code> wrapper, tested at every byte split.</td>
-                <td class="ref"><a href="https://github.com/vllm-project/vllm/pull/52841" target="_blank" rel="noopener" data-cmd="vLLM #52841 ERNIE 4.5 Rust parsers" data-kind="pull request">#52841</a></td>
-                <td><span class="chip open">open · awaiting review</span></td>
-                <td class="date">Aug 2026</td>
-              </tr>
-              <tr>
-                <td class="project">vLLM</td>
-                <td>LoRA support for the audio tower and connector in GLM-ASR, including the token-count hooks the LoRA manager needs at engine init.</td>
-                <td class="ref"><a href="https://github.com/vllm-project/vllm/pull/53149" target="_blank" rel="noopener" data-cmd="vLLM #53149 GLM-ASR tower LoRA" data-kind="pull request">#53149</a></td>
-                <td><span class="chip open">in review</span></td>
-                <td class="date">Aug 2026</td>
-              </tr>
-              <tr>
-                <td class="project">PyTorch core</td>
-                <td>Seven CUDA and inductor fixes, each with a failing-first test: an <code class="mono">int</code> narrowing that made deterministic <code class="mono">index_put_</code> about 800× slower past 2³¹ elements (measured on an H100), bit-wise reproducible sparse-dense matmul under deterministic mode, a cuDNN CTC loss wrong for strided inputs with an uninitialized gradient, an out-of-bounds read in the deterministic <code class="mono">index_put_</code> kernels, leaked CUDA-graph pool references, a dtype check in AOTInductor constant updates and a deprecated-API removal. Two are under maintainer review.</td>
-                <td class="ref"><a href="https://github.com/pytorch/pytorch/pull/201605" target="_blank" rel="noopener" data-cmd="PyTorch #201605 deterministic index_put_ grid narrowing" data-kind="pull request">#201605</a>, <a href="https://github.com/pytorch/pytorch/pull/202968" target="_blank" rel="noopener" data-cmd="PyTorch #202968 deterministic sparse-dense matmul" data-kind="pull request">#202968</a>, <a href="https://github.com/pytorch/pytorch/pull/203097" target="_blank" rel="noopener" data-cmd="PyTorch #203097 cuDNN CTC loss strided input" data-kind="pull request">#203097</a>, <a href="https://github.com/pytorch/pytorch/pull/201635" target="_blank" rel="noopener" data-cmd="PyTorch #201635 index_put_ kernels bounds check" data-kind="pull request">#201635</a>, <a href="https://github.com/pytorch/pytorch/pull/201639" target="_blank" rel="noopener" data-cmd="PyTorch #201639 CUDA graph pool references" data-kind="pull request">#201639</a>, <a href="https://github.com/pytorch/pytorch/pull/202704" target="_blank" rel="noopener" data-cmd="PyTorch #202704 AOTInductor constant dtype check" data-kind="pull request">#202704</a>, <a href="https://github.com/pytorch/pytorch/pull/201636" target="_blank" rel="noopener" data-cmd="PyTorch #201636 deprecated Optimizer API removal" data-kind="pull request">#201636</a></td>
-                <td><span class="chip open">open · 2 in review</span></td>
-                <td class="date">Oct–Nov 2026</td>
-              </tr>
-              <tr>
-                <td class="project">DuckDB</td>
-                <td>Fifteen binder, planner, aggregate and storage fixes, each with the failing SQL as its test; three approved with auto-merge pending CI.</td>
-                <td class="ref"><a href="https://github.com/duckdb/duckdb/pulls?q=is%3Apr+author%3AJonSnow1807+is%3Aopen" target="_blank" rel="noopener" data-cmd="DuckDB open pull requests" data-kind="pull request">15 PRs</a></td>
-                <td><span class="chip open">open · 3 approved</span></td>
-                <td class="date">Oct 2026</td>
-              </tr>
-              <tr>
-                <td class="project">RocksDB</td>
-                <td>A use-after-free in <code class="mono">DBIter</code> when a merge operator returns a blob base value by reference, a merge base value dropped by <code class="mono">Get()</code> when it lies in the next file of the level, a shared-lock miscount in <code class="mono">PointLockManager</code>, and recovery of prepared transactions that wrote to a dropped column family.</td>
-                <td class="ref"><a href="https://github.com/meta/rocksdb/pull/15367" target="_blank" rel="noopener" data-cmd="RocksDB #15367 DBIter use-after-free" data-kind="pull request">#15367</a>, <a href="https://github.com/meta/rocksdb/pull/15446" target="_blank" rel="noopener" data-cmd="RocksDB #15446 Get merge base value" data-kind="pull request">#15446</a>, <a href="https://github.com/meta/rocksdb/pull/15522" target="_blank" rel="noopener" data-cmd="RocksDB #15522 PointLockManager shared locks" data-kind="pull request">#15522</a>, <a href="https://github.com/meta/rocksdb/pull/15554" target="_blank" rel="noopener" data-cmd="RocksDB #15554 prepared transactions dropped column family" data-kind="pull request">#15554</a></td>
-                <td><span class="chip open">open</span></td>
-                <td class="date">Oct–Nov 2026</td>
-              </tr>
-              <tr>
-                <td class="project">Apache Arrow C++</td>
-                <td>Reject non-empty union arrays with missing buffers; fix the ASCII case functions when the first offset is not 0; fix <code class="mono">SparseUnionArray::Make</code> for sliced type-id arrays.</td>
-                <td class="ref"><a href="https://github.com/apache/arrow/pull/54913" target="_blank" rel="noopener" data-cmd="Arrow #54913 union arrays missing buffers" data-kind="pull request">#54913</a>, <a href="https://github.com/apache/arrow/pull/54914" target="_blank" rel="noopener" data-cmd="Arrow #54914 ascii case functions offset" data-kind="pull request">#54914</a>, <a href="https://github.com/apache/arrow/pull/54938" target="_blank" rel="noopener" data-cmd="Arrow #54938 SparseUnionArray sliced type ids" data-kind="pull request">#54938</a></td>
-                <td><span class="chip open">open</span></td>
-                <td class="date">Oct 2026</td>
-              </tr>
-              <tr>
-                <td class="project">llama.cpp</td>
-                <td>Use an fp32 result for quantized operands in the CUDA cuBLAS fallback, with a CUDA-scoped regression test.</td>
-                <td class="ref"><a href="https://github.com/ggml-org/llama.cpp/pull/31345" target="_blank" rel="noopener" data-cmd="llama.cpp #31345 cuBLAS fallback fp32 result" data-kind="pull request">#31345</a></td>
-                <td><span class="chip open">open</span></td>
-                <td class="date">Oct 2026</td>
-              </tr>
-              <tr>
-                <td class="project">vLLM</td>
-                <td>Accept newline-separated parallel Hermes tool calls under <code class="mono">tool_choice="required"</code>.</td>
-                <td class="ref"><a href="https://github.com/vllm-project/vllm/pull/60770" target="_blank" rel="noopener" data-cmd="vLLM #60770 parallel Hermes tool calls" data-kind="pull request">#60770</a></td>
-                <td><span class="chip open">open</span></td>
-                <td class="date">Oct 2026</td>
-              </tr>
-              <tr>
-                <td class="project">SGLang</td>
-                <td>Gemma 4: skip quantization for ignored fused vision layers; mask padding patches and scale in float32 in the vision pooler.</td>
-                <td class="ref"><a href="https://github.com/sgl-project/sglang/pull/43616" target="_blank" rel="noopener" data-cmd="SGLang #43616 Gemma 4 vision quantization skip" data-kind="pull request">#43616</a>, <a href="https://github.com/sgl-project/sglang/pull/43753" target="_blank" rel="noopener" data-cmd="SGLang #43753 Gemma 4 vision pooler" data-kind="pull request">#43753</a></td>
-                <td><span class="chip open">open</span></td>
-                <td class="date">Oct 2026</td>
-              </tr>
-              <tr>
-                <td class="project">Envoy</td>
-                <td>Send ordinary HTTP local replies to non-POST requests that carry a gRPC content type.</td>
-                <td class="ref"><a href="https://github.com/envoyproxy/envoy/pull/48170" target="_blank" rel="noopener" data-cmd="Envoy #48170 gRPC content type local replies" data-kind="pull request">#48170</a></td>
-                <td><span class="chip open">open</span></td>
-                <td class="date">Oct 2026</td>
-              </tr>
-              <tr>
-                <td class="project">Stripe agent toolkit</td>
-                <td>Python package: cap <code class="mono">mcp</code> below 2.0 (2.0 removed the client the package imports) and point the <code class="mono">openai</code> extra at the right dependency.</td>
-                <td class="ref"><a href="https://github.com/stripe/ai/pull/540" target="_blank" rel="noopener" data-cmd="stripe/ai #540 mcp cap" data-kind="pull request">#540</a></td>
-                <td><span class="chip open">open</span></td>
-                <td class="date">Sep 2026</td>
-              </tr>
-              <tr>
-                <td class="project">Stripe agent toolkit</td>
-                <td>Make the Strands integration work with the <code class="mono">strands-agents</code> package; adds an async tool port and tests.</td>
-                <td class="ref"><a href="https://github.com/stripe/ai/pull/541" target="_blank" rel="noopener" data-cmd="stripe/ai #541 Strands integration" data-kind="pull request">#541</a></td>
-                <td><span class="chip open">open</span></td>
-                <td class="date">Sep 2026</td>
-              </tr>
-              <tr>
-                <td class="project">Stripe agent toolkit</td>
-                <td>MCP stdio proxy replies with a JSON-RPC error when forwarding fails instead of letting the client hang for 60 seconds.</td>
-                <td class="ref"><a href="https://github.com/stripe/ai/pull/542" target="_blank" rel="noopener" data-cmd="stripe/ai #542 MCP proxy error reply" data-kind="pull request">#542</a></td>
-                <td><span class="chip open">open</span></td>
-                <td class="date">Sep 2026</td>
               </tr>
             </tbody>
           </table>
