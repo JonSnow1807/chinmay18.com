@@ -91,11 +91,11 @@
         </div>
 
         <aside class="status rise" style="--i:3" aria-label="Current status">
-          <div class="head"><span>status</span><span class="live"><i aria-hidden="true"></i>updated 2026-11-05</span></div>
+          <div class="head"><span>status</span><span class="live"><i aria-hidden="true"></i>updated 2026-11-08</span></div>
           <dl>
             <dt>since</dt><dd>Nov 2025 · Reliance Jio</dd>
             <dt>focus</dt><dd>4G/5G analytics backend · GPU inference on Kubernetes/OpenShift</dd>
-            <dt>upstream</dt><dd>10 merged: PyTorch ×3, bpfilter ×3, DuckDB ×2, Apache Arrow nanoarrow, OpenTelemetry C++</dd>
+            <dt>upstream</dt><dd>11 merged: PyTorch ×3, bpfilter ×3, DuckDB ×2, Apache Arrow (nanoarrow, Rust), OpenTelemetry C++</dd>
             <dt>open to</dt><dd>ML infrastructure and backend roles · Bay Area (relocating)</dd>
             <dt>contact</dt><dd><a href="mailto:cshrivastava2000@gmail.com">cshrivastava2000@gmail.com</a></dd>
           </dl>
@@ -116,9 +116,9 @@
         <div class="ledger reveal">
           <article class="tile">
             <span class="tag">upstream</span>
-            <div class="num">10</div>
-            <div class="what">Changes merged into PyTorch core, DuckDB, Meta's bpfilter, Apache Arrow nanoarrow and OpenTelemetry C++</div>
-            <div class="src">pytorch/pytorch <a href="https://github.com/pytorch/pytorch/pull/158985" target="_blank" rel="noopener">#158985</a>, <a href="https://github.com/pytorch/pytorch/pull/173183" target="_blank" rel="noopener">#173183</a>, <a href="https://github.com/pytorch/pytorch/pull/203097" target="_blank" rel="noopener">#203097</a> · duckdb/duckdb <a href="https://github.com/duckdb/duckdb/pull/27973" target="_blank" rel="noopener">#27973</a>, <a href="https://github.com/duckdb/duckdb/pull/27707" target="_blank" rel="noopener">#27707</a> · facebook/bpfilter <a href="https://github.com/facebook/bpfilter/pull/364" target="_blank" rel="noopener">#364</a>, <a href="https://github.com/facebook/bpfilter/pull/369" target="_blank" rel="noopener">#369</a>, <a href="https://github.com/facebook/bpfilter/pull/597" target="_blank" rel="noopener">#597</a> · apache/arrow-nanoarrow <a href="https://github.com/apache/arrow-nanoarrow/pull/993" target="_blank" rel="noopener">#993</a> · open-telemetry/opentelemetry-cpp <a href="https://github.com/open-telemetry/opentelemetry-cpp/pull/4725" target="_blank" rel="noopener">#4725</a></div>
+            <div class="num">11</div>
+            <div class="what">Changes merged into PyTorch core, DuckDB, Meta's bpfilter, Apache Arrow (nanoarrow and arrow-rs) and OpenTelemetry C++</div>
+            <div class="src">pytorch/pytorch <a href="https://github.com/pytorch/pytorch/pull/158985" target="_blank" rel="noopener">#158985</a>, <a href="https://github.com/pytorch/pytorch/pull/173183" target="_blank" rel="noopener">#173183</a>, <a href="https://github.com/pytorch/pytorch/pull/203097" target="_blank" rel="noopener">#203097</a> · duckdb/duckdb <a href="https://github.com/duckdb/duckdb/pull/27973" target="_blank" rel="noopener">#27973</a>, <a href="https://github.com/duckdb/duckdb/pull/27707" target="_blank" rel="noopener">#27707</a> · facebook/bpfilter <a href="https://github.com/facebook/bpfilter/pull/364" target="_blank" rel="noopener">#364</a>, <a href="https://github.com/facebook/bpfilter/pull/369" target="_blank" rel="noopener">#369</a>, <a href="https://github.com/facebook/bpfilter/pull/597" target="_blank" rel="noopener">#597</a> · apache/arrow-nanoarrow <a href="https://github.com/apache/arrow-nanoarrow/pull/993" target="_blank" rel="noopener">#993</a> · apache/arrow-rs <a href="https://github.com/apache/arrow-rs/pull/12113" target="_blank" rel="noopener">#12113</a> · open-telemetry/opentelemetry-cpp <a href="https://github.com/open-telemetry/opentelemetry-cpp/pull/4725" target="_blank" rel="noopener">#4725</a></div>
           </article>
 
           <article class="tile">
@@ -256,11 +256,11 @@
         <div class="section-head">
           <p class="eyebrow">Upstream record</p>
           <h2>Pull requests to projects I do not own</h2>
-          <p>Status as of 2026-11-05; merged changes only, each linked to its landing commit. Not listed: four other PyTorch proposals and five Metaflow proposals that were closed without landing, one Stripe fix superseded by the maintainers' own, and a torchtune documentation PR (<a href="https://github.com/meta-pytorch/torchtune/pull/2889" target="_blank" rel="noopener">#2889</a>) closed in October 2026 when that project was wound down.</p>
+          <p>Status as of 2026-11-08; merged changes only, each linked to its landing commit. Not listed: four other PyTorch proposals and five Metaflow proposals that were closed without landing, one Stripe fix superseded by the maintainers' own, and a torchtune documentation PR (<a href="https://github.com/meta-pytorch/torchtune/pull/2889" target="_blank" rel="noopener">#2889</a>) closed in October 2026 when that project was wound down.</p>
         </div>
         <div class="table-wrap reveal" role="region" aria-label="Upstream pull requests" tabindex="0">
           <table class="record">
-            <caption class="sr-only">Upstream pull requests, status as of 2026-11-05</caption>
+            <caption class="sr-only">Upstream pull requests, status as of 2026-11-08</caption>
             <thead>
               <tr><th scope="col">Project</th><th scope="col">Change</th><th scope="col">Ref</th><th scope="col">Status</th><th scope="col">When</th></tr>
             </thead>
@@ -334,6 +334,13 @@
                 <td class="ref"><a href="https://github.com/apache/arrow-nanoarrow/pull/993" target="_blank" rel="noopener" data-cmd="nanoarrow #993 nested child metadata comparison" data-kind="pull request">#993</a></td>
                 <td><span class="chip merged">merged</span></td>
                 <td class="date">Oct 2026</td>
+              </tr>
+              <tr>
+                <td class="project">Apache Arrow Rust</td>
+                <td>Sparse-dictionary row encoding in <code class="mono">arrow-row</code> gathered dictionary values with a dynamic extend per row; typed gathers for string and binary values cut mean time by about 21–24 % on the 8,192-row string-dictionary benchmark (32K–4M dictionary values). <a href="https://github.com/apache/arrow-rs/commit/f2d96279c5145c357e4faec5577a055f39693d74" target="_blank" rel="noopener">Landing commit</a>.</td>
+                <td class="ref"><a href="https://github.com/apache/arrow-rs/pull/12113" target="_blank" rel="noopener" data-cmd="arrow-rs #12113 dictionary gather" data-kind="pull request">#12113</a></td>
+                <td><span class="chip merged">merged</span></td>
+                <td class="date">Nov 2026</td>
               </tr>
               <tr>
                 <td class="project">OpenTelemetry C++</td>
@@ -477,7 +484,7 @@
 
   <footer>
     <div class="wrap">
-      <span>© <span data-year>2026</span> Chinmay Shrivastava · Benchmark numbers link to the file or page they came from; employer figures are labelled. Last checked 2026-11-05.</span>
+      <span>© <span data-year>2026</span> Chinmay Shrivastava · Benchmark numbers link to the file or page they came from; employer figures are labelled. Last checked 2026-11-08.</span>
       <span><a href="https://github.com/JonSnow1807/chinmay18.com" target="_blank" rel="noopener">Site source</a> · <a href="projects.html">All projects</a></span>
     </div>
   </footer>
