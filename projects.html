@@ -10,7 +10,7 @@
   <meta name="theme-color" content="#0d1117" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Projects · Chinmay Shrivastava">
-  <meta property="og:description" content="Ten projects, each with sourced numbers and the limits of what it does.">
+  <meta property="og:description" content="Eleven projects, each with sourced numbers and the limits of what it does.">
   <meta property="og:url" content="https://chinmay18.com/projects.html">
   <meta property="og:image" content="https://chinmay18.com/assets/og.png">
   <meta property="og:image:width" content="1200">
@@ -52,7 +52,7 @@
     <section class="page-head">
       <div class="wrap">
         <p class="eyebrow rise" style="--i:0">Projects · every number with its source</p>
-        <h1 class="rise" style="--i:1">Ten projects,<br>each with its sources</h1>
+        <h1 class="rise" style="--i:1">Eleven projects,<br>each with its sources</h1>
         <p class="rise" style="--i:2">From a production watch-party service to one-day prototypes. Each card's numbers trace to a committed file or a live page, and each card says what the project does not do.</p>
       </div>
     </section>
@@ -95,6 +95,15 @@
             <div class="fact">2.7–6.7× training-step speedup vs PyTorch-default FP32 eager · A100<small>ResNet-50 2.71×, ResNet-18 3.84×, 6-layer Transformer 6.65× (2.55× vs TF32 eager) · benchmarks/results/2026-08-25_a100-40gb_v200</small></div>
             <div class="tags"><span>Python</span><span>PyTorch</span><span>CUDA graphs</span><span>AMP</span><span>PyPI</span></div>
             <div class="foot"><a href="https://pypi.org/project/pytorch-autotune/" target="_blank" rel="noopener">PyPI</a><a href="https://github.com/JonSnow1807/pytorch-autotune" target="_blank" rel="noopener">Source</a><a href="https://github.com/JonSnow1807/pytorch-autotune/tree/main/benchmarks/results/2026-08-25_a100-40gb_v200" target="_blank" rel="noopener">Benchmark artifacts</a></div>
+          </article>
+
+          <!-- infer-determinism -->
+          <article class="proj" data-kinds="gpu">
+            <div class="top"><h3><a href="https://github.com/JonSnow1807/infer-determinism" target="_blank" rel="noopener" data-cmd="infer-determinism" data-kind="project">infer-determinism</a></h3><span class="kind">gpu · first run</span></div>
+            <p>A harness that finds where LLM-inference GPU kernels stop being deterministic or batch-invariant. It compares raw output bits for a fixed probe request under batch-size, position, padding, split-KV and CUDA-graph perturbations. The first H100 NVL run covered seven targets (PyTorch, vLLM, FlashInfer, vLLM FlashAttention, fused MoE) and recorded two candidates; one, FlashInfer CUDA-core decode with <code class="mono">disable_split_kv=True</code>, was already reported upstream as flashinfer#7981. Run-2 cases (GQA, sliding window, FP8 KV cache) are added but not yet run.</p>
+            <div class="fact">No divergence in the runnable torch_sdpa backends, vLLM's direct batch-invariant kernels, fused MoE, or FA2/FA3 with num_splits=1 · 2 candidates · H100 NVL<small>head dimension 64 only; one GPU; an equal comparison covers only the recorded case and perturbation · results/2026-11-06_h100/README.md</small></div>
+            <div class="tags"><span>Python</span><span>CUDA</span><span>PyTorch</span><span>vLLM</span><span>FlashInfer</span></div>
+            <div class="foot"><a href="https://github.com/JonSnow1807/infer-determinism" target="_blank" rel="noopener">Source</a><a href="https://github.com/JonSnow1807/infer-determinism/tree/main/results/2026-11-06_h100" target="_blank" rel="noopener">H100 results</a><a href="https://github.com/flashinfer-ai/flashinfer/issues/7981" target="_blank" rel="noopener">flashinfer#7981</a></div>
           </article>
 
           <!-- FastMQA -->
@@ -168,7 +177,7 @@
 
   <footer>
     <div class="wrap">
-      <span>© <span data-year>2026</span> Chinmay Shrivastava · Measured numbers link to their source files. Last checked 2026-11-08.</span>
+      <span>© <span data-year>2026</span> Chinmay Shrivastava · Measured numbers link to their source files. Last checked 2026-11-09.</span>
       <span><a href="https://github.com/JonSnow1807/chinmay18.com" target="_blank" rel="noopener">Site source</a> · <a href="index.html">Home</a></span>
     </div>
   </footer>
