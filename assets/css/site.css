@@ -1081,13 +1081,24 @@ table.record .date {
   margin-top: 10px;
 }
 
-.cred span {
+.cred span,
+.cred a {
   font-family: var(--font-mono);
   font-size: 12.5px;
   padding: 6px 10px;
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
   background: var(--panel);
+}
+
+.cred a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.cred a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 /* ---------- skills ---------- */
