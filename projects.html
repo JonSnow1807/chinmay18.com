@@ -10,7 +10,7 @@
   <meta name="theme-color" content="#0d1117" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Projects · Chinmay Shrivastava">
-  <meta property="og:description" content="Eleven projects, each with sourced numbers and the limits of what it does.">
+  <meta property="og:description" content="Thirteen projects, each with sourced numbers and the limits of what it does.">
   <meta property="og:url" content="https://chinmay18.com/projects.html">
   <meta property="og:image" content="https://chinmay18.com/assets/og.png">
   <meta property="og:image:width" content="1200">
@@ -52,7 +52,7 @@
     <section class="page-head">
       <div class="wrap">
         <p class="eyebrow rise" style="--i:0">Projects · every number with its source</p>
-        <h1 class="rise" style="--i:1">Eleven projects,<br>each with its sources</h1>
+        <h1 class="rise" style="--i:1">Thirteen projects,<br>each with its sources</h1>
         <p class="rise" style="--i:2">From a production watch-party service to one-day prototypes. Each card's numbers trace to a committed file or a live page, and each card says what the project does not do.</p>
       </div>
     </section>
@@ -104,6 +104,24 @@
             <div class="fact">No divergence in the runnable torch_sdpa backends, vLLM's direct batch-invariant kernels, fused MoE, or FA2/FA3 with num_splits=1 · 3 candidates over 2 runs · H100 NVL<small>one GPU; run 1 used head dimension 64; an equal comparison covers only the recorded case and perturbation · results/2026-11-06_h100 and results/2026-11-09_h100</small></div>
             <div class="tags"><span>Python</span><span>CUDA</span><span>PyTorch</span><span>vLLM</span><span>FlashInfer</span></div>
             <div class="foot"><a href="https://github.com/JonSnow1807/infer-determinism" target="_blank" rel="noopener">Source</a><a href="https://github.com/JonSnow1807/infer-determinism/tree/master/results/2026-11-06_h100" target="_blank" rel="noopener">Run 1 results</a><a href="https://github.com/JonSnow1807/infer-determinism/tree/master/results/2026-11-09_h100" target="_blank" rel="noopener">Run 2 results</a><a href="https://github.com/flashinfer-ai/flashinfer/issues/7981" target="_blank" rel="noopener">flashinfer#7981</a></div>
+          </article>
+
+          <!-- spsc-latency -->
+          <article class="proj" data-kinds="systems">
+            <div class="top"><h3><a href="https://github.com/JonSnow1807/spsc-latency" target="_blank" rel="noopener" data-cmd="spsc-latency" data-kind="project">spsc-latency</a></h3><span class="kind">systems · C++20</span></div>
+            <p>Four bounded single-producer/single-consumer ring buffers written from scratch: sequentially consistent indices on one cache line, acquire/release on one line, acquire/release on separate lines, and separate lines with a cached copy of the peer's index. A harness measures throughput and round-trip latency over a sweep of capacities and payload sizes, with stress and ThreadSanitizer tests of 100 million transfers per design.</p>
+            <div class="fact">cached design: 133.8 M items/s, p99.9 140.5 ns one way · pinned Threadripper PRO 3995WX<small>8-byte messages, capacity 1024, median of 3 trials; shared rented host, clock overhead not subtracted; an unpinned Apple M2 Pro run is also committed · results/x86-threadripper-3995wx</small></div>
+            <div class="tags"><span>C++20</span><span>Atomics</span><span>Lock-free</span><span>TSan</span></div>
+            <div class="foot"><a href="https://github.com/JonSnow1807/spsc-latency" target="_blank" rel="noopener">Source</a><a href="https://github.com/JonSnow1807/spsc-latency/tree/master/results/x86-threadripper-3995wx" target="_blank" rel="noopener">x86 results</a><a href="https://github.com/JonSnow1807/spsc-latency/tree/master/results/macbook-m2" target="_blank" rel="noopener">M2 results</a></div>
+          </article>
+
+          <!-- orderbook-latency -->
+          <article class="proj" data-kinds="systems">
+            <div class="top"><h3><a href="https://github.com/JonSnow1807/orderbook-latency" target="_blank" rel="noopener" data-cmd="orderbook-latency" data-kind="project">orderbook-latency</a></h3><span class="kind">systems · C++20</span></div>
+            <p>A single-instrument limit order book with two interchangeable engines: a <code class="mono">std::map</code> baseline and a preallocated engine that does not allocate on the hot path. Integer prices, no floating point in matching. A differential test replays 500,000 messages through both engines and checks they agree, under normal and ASan/UBSan builds. Single-threaded engine on synthetic order flow, not an exchange gateway.</p>
+            <div class="fact">fast engine: p99.9 281 ns vs 471 ns, 20.8 vs 10.7 M messages/s batched · pinned Threadripper PRO 3995WX<small>default stream, median of 3 repeats, RDTSCP timer pair (p50 40 ns) not subtracted; shared rented host; an unpinned Apple M2 Pro run is also committed · results/x86-threadripper-3995wx</small></div>
+            <div class="tags"><span>C++20</span><span>Low latency</span><span>Differential testing</span><span>ASan/UBSan</span></div>
+            <div class="foot"><a href="https://github.com/JonSnow1807/orderbook-latency" target="_blank" rel="noopener">Source</a><a href="https://github.com/JonSnow1807/orderbook-latency/tree/master/results/x86-threadripper-3995wx" target="_blank" rel="noopener">x86 results</a><a href="https://github.com/JonSnow1807/orderbook-latency/tree/master/results/macbook-m2" target="_blank" rel="noopener">M2 results</a></div>
           </article>
 
           <!-- FastMQA -->
