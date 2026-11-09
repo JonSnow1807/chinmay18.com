@@ -1081,8 +1081,8 @@ table.record .date {
   margin-top: 10px;
 }
 
-.cred span,
-.cred a {
+.cred > span,
+.cred > a {
   font-family: var(--font-mono);
   font-size: 12.5px;
   padding: 6px 10px;
@@ -1099,6 +1099,14 @@ table.record .date {
 .cred a:hover {
   border-color: var(--accent);
   color: var(--accent);
+}
+
+.cred .cred-src {
+  margin-left: 8px;
+  padding-left: 8px;
+  border-left: 1px solid var(--line);
+  color: var(--accent);
+  white-space: nowrap;
 }
 
 /* ---------- skills ---------- */
