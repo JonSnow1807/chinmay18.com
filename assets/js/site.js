@@ -328,4 +328,40 @@
   document.querySelectorAll("[data-year]").forEach(function (el) {
     el.textContent = String(new Date().getFullYear());
   });
+
+  /* ---- live Hugging Face counts (the numbers in the HTML stay if this fails) ---- */
+  var statEls = document.querySelectorAll('[data-stat^="hf_"]');
+  if (statEls.length && window.fetch) {
+    var hf = "https://huggingface.co/api/";
+    var getJSON = function (url) {
+      return fetch(url).then(function (r) {
+        if (!r.ok) throw new Error(String(r.status));
+        return r.json();
+      });
+    };
+    Promise.all([
+      getJSON(hf + "models/chinmays18/medical-prescription-ocr?expand[]=downloads&expand[]=downloadsAllTime"),
+      getJSON(hf + "datasets/chinmays18/medical-prescription-dataset?expand[]=downloadsAllTime"),
+    ]).then(function (res) {
+      var stats = {
+        hf_model_all: res[0].downloadsAllTime,
+        hf_model_30d: res[0].downloads,
+        hf_dataset_all: res[1].downloadsAllTime,
+      };
+      var updated = false;
+      statEls.forEach(function (el) {
+        var v = stats[el.getAttribute("data-stat")];
+        if (typeof v === "number" && isFinite(v) && v >= 0) {
+          el.textContent = Math.round(v).toLocaleString("en-US");
+          updated = true;
+        }
+      });
+      if (updated) {
+        var today = new Date().toISOString().slice(0, 10);
+        document.querySelectorAll('[data-stat="fetched"]').forEach(function (el) {
+          el.textContent = today;
+        });
+      }
+    }).catch(function () {});
+  }
 })();
